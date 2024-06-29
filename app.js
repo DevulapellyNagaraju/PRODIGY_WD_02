@@ -1,8 +1,8 @@
-let timer; // To hold setInterval instance
-let time = 0; // Initial time in milliseconds
-let running = false; // Flag to track if stopwatch is running
-let lapNumber = 1; // Track lap number
-let lapTimes = []; // Array to store lap times
+let timer; 
+let time = 0; 
+let running = false; 
+let lapNumber = 1; 
+let lapTimes = []; 
 
 function startStop() {
   if (running) {
@@ -10,7 +10,7 @@ function startStop() {
     running = false;
     document.querySelector('button').textContent = 'Start';
   } else {
-    timer = setInterval(updateTime, 10); // Update every 10ms
+    timer = setInterval(updateTime, 10); 
     running = true;
     document.querySelector('button').textContent = 'Stop';
   }
@@ -21,21 +21,21 @@ function reset() {
   running = false;
   time = 0;
   updateDisplay();
-  lapTimes = []; // Reset lap times array
-  displayLapTimes(); // Clear lap list display
-  document.getElementById('clearButton').style.display = 'none'; // Hide Clear button
-  document.getElementById('clearAllButton').style.display = 'none'; // Hide Clear All button
+  lapTimes = []; 
+  displayLapTimes(); 
+  document.getElementById('clearButton').style.display = 'none'; 
+  document.getElementById('clearAllButton').style.display = 'none'; 
   document.querySelector('button').textContent = 'Start';
 }
 
 function updateTime() {
-  time += 10; // Increment time by 10ms
+  time += 10; 
   updateDisplay();
 }
 
 function recordLap() {
   if (running) {
-    // Capture current lap time
+   
     const lapTime = document.querySelector('.time').textContent;
 
     // Add lap time to lapTimes array
@@ -51,8 +51,8 @@ function recordLap() {
 
 function clearLast() {
   if (lapTimes.length > 0) {
-    lapTimes.pop(); // Remove the last lap time from lapTimes array
-    displayLapTimes(); // Update display to reflect the removal
+    lapTimes.pop(); 
+    displayLapTimes(); 
   }
 
   // Toggle visibility of Clear and Clear All buttons
@@ -60,10 +60,10 @@ function clearLast() {
 }
 
 function clearAll() {
-  lapTimes = []; // Clear lapTimes array
-  displayLapTimes(); // Update display to clear lap list
+  lapTimes = []; 
+  displayLapTimes(); 
 
-  // Toggle visibility of Clear and Clear All buttons
+  
   toggleClearButtons();
 }
 
@@ -71,14 +71,14 @@ function toggleClearButtons() {
   const clearButton = document.getElementById('clearButton');
   const clearAllButton = document.getElementById('clearAllButton');
 
-  // Show Clear button if there's more than one lap recorded
+  
   if (lapTimes.length > 1) {
     clearButton.style.display = 'inline-block';
   } else {
     clearButton.style.display = 'none';
   }
 
-  // Show Clear All button if there are more than two lap times
+  
   if (lapTimes.length > 2) {
     clearAllButton.style.display = 'inline-block';
   } else {
@@ -91,10 +91,10 @@ function displayLapTimes() {
   if (lapList) {
     lapList.innerHTML = ''; // Clear existing lap list
 
-    // Display lap times if there are any
+    
     if (lapTimes.length > 0) {
       lapTimes.forEach((lap, index) => {
-        const lapDisplay = document.createElement('div'); // Changed li to div
+        const lapDisplay = document.createElement('div'); 
         lapDisplay.classList.add('lap');
 
         const lapNumber = (lap.lap).toString().padStart(2, '0');
