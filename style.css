@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(./background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  .stopwatch {
+    text-align: center;
+    background-color: #eaebe900;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .time {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  .controls {
+    margin-top: 20px;
+  }
+  /* Styling for buttons */
+  button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.1s ease-out, box-shadow 0.3s;
+    box-shadow: 0 4px #2980b9;
+  }
+ 
+  button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 2px #2980b9;
+  }
+  
+  button:active, button:focus {
+    outline: none;
+    transform: translateY(0);
+    box-shadow: 0 0 #2980b9;
+  }
+  #lapList {
+    text-align: left;
+    margin-top: 20px;
+  }
+  .lap {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5em;
+    margin: 5px 0;
+  }
+  .lap span {
+    width: 80px;
+    text-align: right;
+  }
+  .logoname{
+    font-size: 180%;
+  }
